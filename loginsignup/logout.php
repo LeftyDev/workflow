@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=1.0">
     <!--<link rel="stylesheet" href="css/css/font-awesome.min.css">-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600,800|Raleway:400,600,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600,800|Raleway:200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

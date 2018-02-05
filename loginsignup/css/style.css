@@ -57,7 +57,7 @@ html, body {
   width: 60%;
   height: 100%;
   background: white;
-  padding: 0 100px 35gipx 100px;
+  padding: 0 5.208vw 35px 5.208vw;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -69,11 +69,11 @@ html, body {
     line-height: 50px; }
   #content-right .header-1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 600; }
   #content-right .header-2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 800; }
   #content-right form {
     margin-top: -19px;
@@ -119,7 +119,7 @@ html, body {
       font-family: 'Raleway', sans-serif;
       font-weight: 800;
       font-size: 18px;
-      letter-spacing: 0.075em;
+      letter-spacing: 0.100em;
       text-transform: uppercase;
       margin: auto;
       background: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);
@@ -137,15 +137,15 @@ html, body {
     bottom: 5px;
     left: 25px; }
   #content-right div#corner-message span {
-    color: #382b3e; }
+    color: #4c3f52; }
   #content-right div#corner-message span:nth-child(1) {
     font-family: "Raleway", sans-serif;
     font-size: 14px;
-    font-weight: 400; }
+    font-weight: 300; }
   #content-right div#corner-message span:nth-child(2) {
     font-family: "Raleway", sans-serif;
     font-size: 14px;
-    font-weight: 600; }
+    font-weight: 500; }
   #content-right div#corner-message:hover span {
     color: #b7b6b6;
     cursor: pointer; }

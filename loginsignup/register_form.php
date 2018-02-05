@@ -25,18 +25,18 @@ if (!(isset($_SESSION["user_id"]))) {
                 <span><span class="logo-1">Work</span><span class="logo-2">flow</span></span>
             </div>
             <div id="content-right">
-                <span><span class="header-1">Welcome to Work</span><span class="header-2">flow.</span></span>
-                <form id="login_form" name="login_form" action="login.php" method="post">
+                <span><span class="header-1">Register an Account</span></span>
+                <form id="login_form" name="login_form" action="register.php" method="post">
                     <div class="input-fields"><input type="text" id="username" name="username" class="login-username"
                                                      placeholder="Username or Email">&nbsp;<img
-                                src="img/icons/user.png"></div>
+                            src="img/icons/user.png"></div>
                     <div class="input-fields"><input type="password" id="password" name="password"
                                                      class="login-password" placeholder="Password">&nbsp;<img
-                                src="img/icons/lock.png"></div>
-                    <button type="submit" class="login-submit">Log In</button>
+                            src="img/icons/lock.png"></div>
+                    <button type="submit" class="login-submit">Sign Up</button>
                 </form>
-                <div id="corner-message" onclick="window.location = 'register_form.php'">
-                    <span>Don't have an account? </span><span>Click here to register.</span>
+                <div id="corner-message" onclick="window.location = 'index.php'">
+                    <span>Already have an account? </span><span>Click here to login.</span>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@ if (!(isset($_SESSION["user_id"]))) {
     </div>
 
     <?php
-    } else if ($_SESSION["user_id"] !== null AND $_SESSION['user_name'] !== null) {
+} else if ($_SESSION["user_id"] !== null AND $_SESSION['user_name'] !== null) {
     ?>
 
     <div id="container">
@@ -55,7 +55,7 @@ if (!(isset($_SESSION["user_id"]))) {
                 <span><span class="logo-1">Work</span><span class="logo-2">flow</span></span>
             </div>
             <div id="content-right">
-                <span><span class="header-1">You are successfully logged in, <?= $_SESSION['user_name'] ?>.</span>
+                <span><span class="header-1">How did you get here, <?= $_SESSION['user_name'] ?>?.</span>
 
                 <div id="corner-message" onclick="window.location = 'logout.php'">
                     <span>Made a mistake? </span><span>Logout now.</span>
