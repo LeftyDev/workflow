@@ -143,7 +143,7 @@ html, body {
   #content-right div#corner-message-left span:nth-child(1) {
     font-family: "Raleway", sans-serif;
     font-size: 14px;
-    font-weight: 300; }
+    font-weight: 500; }
   #content-right div#corner-message-left span:nth-child(2) {
     font-family: "Raleway", sans-serif;
     font-size: 14px;
@@ -168,26 +168,106 @@ html, body {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 998;
   top: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(42, 37, 42, 0.85); }
+
+#modal-box {
+  width: 65%;
+  height: 65%;
+  min-height: 520px;
+  background: white;
+  padding: 35px 5.208vw 35px 5.208vw;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-items: center; }
-  #modal #modal-box {
-    width: 50%;
-    height: 50%;
-    background: white;
-    padding: 0 5.208vw 35px 5.208vw;
-    box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto; }
+  #modal-box .header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px;
+    font-weight: 600; }
+  #modal-box span#email_error, #modal-box span#user_error_message {
+    position: absolute;
+    bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4c3f52; }
+  #modal-box img.exit-out {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    height: 30px; }
+  #modal-box img.exit-out:hover {
+    cursor: pointer; }
+  #modal-box form#reset_form {
+    margin-top: -19px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     flex-direction: column; }
-    #modal #modal-box .header {
-      font-family: 'Poppins', sans-serif;
-      font-size: 42px;
-      font-weight: 600; }
+    #modal-box form#reset_form div.input-fields {
+      border-bottom: 3px solid transparent;
+      border-image: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);
+      border-image-slice: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0 10px 10px 10px;
+      box-sizing: border-box; }
+      #modal-box form#reset_form div.input-fields input {
+        background: white;
+        width: calc(100% - 50px);
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        color: #382b3e;
+        border: none;
+        padding: 0; }
+      #modal-box form#reset_form div.input-fields #email {
+        margin-top: 93px; }
+      #modal-box form#reset_form div.input-fields input:-webkit-autofill, #modal-box form#reset_form div.input-fields input::placeholder {
+        -webkit-box-shadow: 0 0 0 50px white inset;
+        -webkit-text-fill-color: #b7b6b6;
+        color: #b7b6b6; }
+      #modal-box form#reset_form div.input-fields input:focus {
+        outline: none; }
+    #modal-box form#reset_form div.input-fields:last-of-type {
+      margin-bottom: 75px; }
+    #modal-box form#reset_form button.reset-submit {
+      border: 3px solid transparent;
+      border-image: linear-gradient(to right, #21D4FD 0%, #B721FF 100%);
+      border-image-slice: 1;
+      width: 275px;
+      height: 90px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.100em;
+      text-transform: uppercase;
+      margin: auto;
+      background: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }
+    #modal-box form#reset_form button.reset-submit:hover {
+      border-image: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);
+      border-image-slice: 1;
+      background: linear-gradient(to right, #21D4FD 0%, #B721FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

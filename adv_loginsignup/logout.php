@@ -26,8 +26,8 @@ session_destroy();
         </div>
         <div id="content-right">
             <span><span class="header-1">You have been logged out.</span>
-            <div id="corner-message" onclick="window.location = 'index.php'">
-                <span>Go back to </span><span>Home.</span>
+            <div id="corner-message-right" onclick="window.location = 'index.php'">
+                <span>Login </span><span>Again</span>
             </div>
         </div>
 

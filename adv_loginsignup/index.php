@@ -11,13 +11,23 @@
     <link rel="stylesheet" href="css/style.css">
     <script>
         $(document).ready(function() {
-            $('#modal').hide();
+            var modalMinHeight = $('#modal-box').css('min-height');
+            $('#modal, #modal-box').hide();
             $('#modal').click(function(e){
                 if (e.target.id === "modal-box") {
                     return false;
                 } else {
-                    $(this).toggle();
-                }
+                    $(this).fadeToggle(300);
+                    $('#modal-box').css('min-height', 0).slideToggle(300, function() {
+                        $(this).css('min-height', modalMinHeight)
+                    });
+            }
+            });
+            $('img.exit-out').click(function() {
+                $('#modal').fadeToggle(300);
+                $('#modal-box').css('min-height', 0).slideToggle(300, function() {
+                    $(this).css('min-height', modalMinHeight)
+                });
             })
         })
     </script>
@@ -49,10 +59,10 @@ if (!(isset($_SESSION["user_id"]))) {
                     <button type="submit" class="login-submit">Log In</button>
                 </form>
                 <div id="corner-message-left" onclick="window.location = 'register_form.php'">
-                    <span>Don't have an account? </span><span>Click here to register.</span>
+                    <span>Register </span><span>an Account</span>
                 </div>
                 <div id="corner-message-right">
-                    <span onclick="$('#modal').toggle()">Forgot Password?</span>
+                    <span onclick="$('#modal').fadeToggle(300); $('#modal-box').css('min-height', 0).slideToggle(300, function() {$(this).css('min-height', 520)});">Forgot Password?</span>
                 </div>
             </div>
 
@@ -60,13 +70,52 @@ if (!(isset($_SESSION["user_id"]))) {
     </div>
 
     <div id="modal">
-        <div id="modal-box">
-            <span class="header">Reset Password</span>
-        </div>
     </div>
 
+    <div id="modal-box">
+        <span class="header">Reset Password</span>
+        <form id="reset_form" name="reset_form" action="" method="">
+            <div class="input-fields"><input type="text" id="email" name="email" class="email"
+                                             placeholder="Email Address">&nbsp;<img
+                        src="img/icons/envelope.png"></div>
+            <button type="submit" class="reset-submit">Reset</button>
+        </form>
+        <span id="email_error"></span>
+        <span id="user_error_message"></span>
+        <img src="img/icons/x-2.png" class="exit-out">
+    </div>
+
+    <script type="text/javascript">
+        // Attach a submit handler to the form
+        $( "#reset_form" ).submit(function(event) {
+            event.preventDefault();
+            $.post('reset.php', {email: $("#email").val()},
+                function(data) {
+                        console.log(data);
+                        //reset the error messages
+                        $("#user_error_message").html("");
+                        $("#user_error_message").css("display","none");
+                        $("#email_error").html("");
+                        $("#email_error").css("display","none");
+
+                        if (data.status == "success") {
+                            if (data.user_message != null) {
+                                $("#user_error_message").html(data.user_message);
+                                $("#user_error_message").css("display","block");
+                            }
+                        } else {
+                            if (data.email_error != null) {
+                                $("#email_error").html(data.email_error);
+                                $("#email_error").css("display","block");
+                            }
+                        }
+                    }, "json"
+            );
+        });
+    </script>
+
     <?php
-    } else if ($_SESSION["user_id"] !== null AND $_SESSION['user_name'] !== null) {
+    } else if ($_SESSION["user_id"] !== null AND $_SESSION['user_name'] !== null AND $_SESSION['user_email'] !== null) {
     ?>
 
     <div id="container">
@@ -77,10 +126,10 @@ if (!(isset($_SESSION["user_id"]))) {
                 <span><span class="logo-1">Work</span><span class="logo-2">flow</span></span>
             </div>
             <div id="content-right">
-                <span><span class="header-1">You are successfully logged in, <?= $_SESSION['user_name'] ?>.</span>
+                <span><span class="header-1">You are successfully logged in, <?= $_SESSION['user_name'] . " (" . $_SESSION['user_email'] . ")" ?>.</span>
 
-                <div id="corner-message" onclick="window.location = 'logout.php'">
-                    <span>Made a mistake? </span><span>Logout now.</span>
+                <div id="corner-message-right" onclick="window.location = 'logout.php'">
+                    <span></span><span>Logout</span>
                 </div>
             </div>
 

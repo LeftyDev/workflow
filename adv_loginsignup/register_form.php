@@ -28,19 +28,19 @@ if (!(isset($_SESSION["user_id"]))) {
                 <span><span class="header-1">Register an Account</span></span>
                 <form id="login_form" name="login_form" action="register.php" method="post">
                     <div class="input-fields"><input type="text" id="username" name="username" class="login-username"
-                                                     placeholder="Username or Email">&nbsp;<img
+                                                     placeholder="Username">&nbsp;<img
                             src="img/icons/user.png"></div>
                     <div class="input-fields"><input type="email" id="email" name="email"
                                                      class="login-email" placeholder="Email"> <img
-                                src="img/icons/lock.png"></div>
+                                src="img/icons/envelope.png"></div>
                     <div class="input-fields"><input type="password" id="password" name="password"
                                                      class="login-password" placeholder="Password">&nbsp;<img
                             src="img/icons/lock.png"></div>
 
                     <button type="submit" class="login-submit">Sign Up</button>
                 </form>
-                <div id="corner-message" onclick="window.location = 'index.php'">
-                    <span>Already have an account? </span><span>Click here to login.</span>
+                <div id="corner-message-right" onclick="window.location = 'index.php'">
+                    <span>Return to Login </span><span></span>
                 </div>
             </div>
 

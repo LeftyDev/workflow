@@ -25,22 +25,24 @@ if (isset($_POST["password"])) {
 }
 
 if ($pw_verified == true) {
-    $sql = "SELECT id, username FROM users WHERE username = '" . $username . "'";
+    $sql = "SELECT id, username, email FROM users WHERE username = '" . $username . "'";
     $result = mysqli_query($link, $sql);
 
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_array($result, MYSQLI_BOTH);
         $user_id = $row["id"];
         $user_name = $row["username"];
+        $user_email = $row["email"];
         $_SESSION["user_id"] = $user_id;
         $_SESSION["user_name"] = $user_name;
+        $_SESSION["user_email"] = $user_email;
     }
 }
 
 if ($_SESSION["user_id"] > 0) {
     echo '<script type="text/javascript">window.location = "index.php";</script>';
 } else {
-    echo 'fail';
+    echo 'Invalid Username or Password';
     session_unset();
     session_destroy();
 }
