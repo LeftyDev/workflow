@@ -88,6 +88,7 @@ if (!(isset($_SESSION["user_id"]))) {
     <script type="text/javascript">
         // Attach a submit handler to the form
         $( "#reset_form" ).submit(function(event) {
+            $("#email_error, #user_error_message").html = "";
             event.preventDefault();
             $.post('reset.php', {email: $("#email").val()},
                 function(data) {
