@@ -214,12 +214,12 @@ html, body {
     height: 30px; }
   #modal-box img.exit-out:hover {
     cursor: pointer; }
-  #modal-box form#reset_form {
+  #modal-box form#reset_form, #modal-box form#password_form {
     margin-top: -19px;
     width: 100%;
     display: flex;
     flex-direction: column; }
-    #modal-box form#reset_form div.input-fields {
+    #modal-box form#reset_form div.input-fields, #modal-box form#password_form div.input-fields {
       border-bottom: 3px solid transparent;
       border-image: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);
       border-image-slice: 1;
@@ -228,7 +228,7 @@ html, body {
       align-items: flex-end;
       padding: 0 10px 10px 10px;
       box-sizing: border-box; }
-      #modal-box form#reset_form div.input-fields input {
+      #modal-box form#reset_form div.input-fields input, #modal-box form#password_form div.input-fields input {
         background: white;
         width: calc(100% - 50px);
         font-family: 'Raleway', sans-serif;
@@ -237,17 +237,17 @@ html, body {
         color: #382b3e;
         border: none;
         padding: 0; }
-      #modal-box form#reset_form div.input-fields #email {
+      #modal-box form#reset_form div.input-fields #email, #modal-box form#password_form div.input-fields #email {
         margin-top: 93px; }
-      #modal-box form#reset_form div.input-fields input:-webkit-autofill, #modal-box form#reset_form div.input-fields input::placeholder {
+      #modal-box form#reset_form div.input-fields input:-webkit-autofill, #modal-box form#reset_form div.input-fields input::placeholder, #modal-box form#password_form div.input-fields input:-webkit-autofill, #modal-box form#password_form div.input-fields input::placeholder {
         -webkit-box-shadow: 0 0 0 50px white inset;
         -webkit-text-fill-color: #b7b6b6;
         color: #b7b6b6; }
-      #modal-box form#reset_form div.input-fields input:focus {
+      #modal-box form#reset_form div.input-fields input:focus, #modal-box form#password_form div.input-fields input:focus {
         outline: none; }
-    #modal-box form#reset_form div.input-fields:last-of-type {
+    #modal-box form#reset_form div.input-fields:last-of-type, #modal-box form#password_form div.input-fields:last-of-type {
       margin-bottom: 75px; }
-    #modal-box form#reset_form button.reset-submit {
+    #modal-box form#reset_form button.reset-submit, #modal-box form#password_form button.reset-submit {
       border: 3px solid transparent;
       border-image: linear-gradient(to right, #21D4FD 0%, #B721FF 100%);
       border-image-slice: 1;
@@ -262,7 +262,7 @@ html, body {
       background: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; }
-    #modal-box form#reset_form button.reset-submit:hover {
+    #modal-box form#reset_form button.reset-submit:hover, #modal-box form#password_form button.reset-submit:hover {
       border-image: linear-gradient(to left, #21D4FD 0%, #B721FF 100%);
       border-image-slice: 1;
       background: linear-gradient(to right, #21D4FD 0%, #B721FF 100%);
