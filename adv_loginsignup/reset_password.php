@@ -30,13 +30,13 @@ if (isset($_REQUEST["token"])) {
         $row = mysqli_fetch_array($result, MYSQLI_BOTH);
         if ($row["time_elapsed"] > 3600) {  //1 hour
             //link has expired
-            $user_message .='
+            $user_message ='
             <span><span class="header-1">The password reset link has expired.</span>
 			';
 
         } else {  //if ($row["time_elapsed"] > 3600)
             //link is good  -- reset the password
-            $user_message .='
+            $user_message ='
 			<span><span class="header-1">Reset Your Password</span>
 			<form id="password_form" name="password_form" action="" method="">
                 <div class="input-fields"><input type="password" id="password" name="password"
@@ -79,7 +79,10 @@ if (isset($_REQUEST["token"])) {
             <span><span class="logo-1">Work</span><span class="logo-2">flow</span></span>
         </div>
         <div id="content-right">
-                <?= $user_message ?>
+            <?= $user_message ?>
+            <div id="corner-message-left">
+                <span onclick="window.location = 'index.php'">Login</span>
+            </div>
             <div id="corner-message-right">
                 <span id="user_error_message"></span>
             </div>
