@@ -37,7 +37,7 @@
 <?php
 session_start();
 
-if (!(isset($_SESSION["user_id"]))) {
+if (!(isset($_SESSION["user_id"])) OR $_SESSION["user_id"] == 0) {
     ?>
 
     <div id="container">

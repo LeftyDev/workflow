@@ -35,14 +35,14 @@ if (isset($_REQUEST["password"])) {
 
 if (!$problems) {
 	
-	$sql = "UPDATE users set `password` = '".$password."' WHERE id = '".$user_id."' ";
+	$sql = "UPDATE users SET password = '$password' WHERE id = '$user_id'";
 	$result = mysqli_query($link, $sql); 
-	if (mysqli_affected_rows($link) == 1) {
+	if (mysqli_affected_rows($link) === 1) {
 		$_SESSION["user_id"] = $user_id;
         $password_error = "Your password is being reset...";
         echo "<script>setTimeout(function() {return false;}, 1500)</script>";
-	} else {
-		$password_error = 'There was a problem with the database. Your password cannot be reset.';
+	} else (m) {
+		$password_error = 'There was a problem with the database. Your password cannot be reset. ID=' . $user_id . " Password=" . $password;
 	}  // if( ! mysqli_affected_rows($link) == 1
 
 } // if ( ! $problems )

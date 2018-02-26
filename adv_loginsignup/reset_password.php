@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Brian
- * Date: 2/17/2018
- * Time: 5:08 AM
- */
 
 include("php/db_connect.php");
 
@@ -104,13 +98,13 @@ if (isset($_REQUEST["token"])) {
                 $("#user_error_message").html("");
                 $("#user_error_message").css("display","none");
 
-                if(data.status == "success"){
+                if (data.status == "success") {
                     if(data.user_message != null){
                         $("#user_error_message").html(data.user_message);
                         $("#user_error_message").css("display","block");
                     }
-                }else{
-                    if(data.password_error != null){
+                } else {
+                    if(data.password_error != null && data.status != "success"){
                         $("#user_error_message").html(data.password_error);
                         $("#user_error_message").css("display","block");
                     }

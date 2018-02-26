@@ -42,7 +42,7 @@ if (isset($_REQUEST["email"])) {
             $result = mysqli_query($link, $sql);
             if (mysqli_affected_rows($link) == 1) {
                 $email_error = '';
-                $reset_link = "http://localhost/N413/adv_loginsignup/reset_password.php?token=" . $token;
+                $reset_link = "https://in-info-web4.informatics.iupui.edu/~brjebrow/N413/adv_loginsignup/reset_password.php?token=" . $token;
                 $to = $_REQUEST["email"];
                 $subject = 'Password Reset Request';
                 $message = '
