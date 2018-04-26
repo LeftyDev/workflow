@@ -50,7 +50,7 @@ if (isset($_REQUEST["title"]) && isset($_REQUEST["body"]) && isset($_REQUEST["us
                 $user_id = mysqli_real_escape_string($link, $user_id);
 
                 $sql = "INSERT INTO `documents` (`id`, `title`, `date_created`, `creator_id`, `last_update`, `last_updater_id`, `content`, `currently_edited`) 
-                        VALUES (NULL, '" . $title . "', NOW(), '" . $user_id . "', NOW(), '" . $user_id . "', '" . $body . "', 0)";
+                        VALUES (NULL, '" . $title . "', NOW(), '" . $user_id . "', NOW(), '" . $user_id . "', '" . $body . "', '0')";
                 $result = mysqli_query($link, $sql);
                 if (mysqli_affected_rows($link) == 1) {
                     $problems = false;

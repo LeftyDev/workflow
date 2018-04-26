@@ -21,7 +21,7 @@ if (isset($_REQUEST["doc_id"]) && isset($_REQUEST["user_id"]) && isset($_REQUEST
             $to = $row['email'];
             $subject = 'An Invitation to Collaborate on Workflow';
             $message = 'You have been invited to collaborate on a document in Workflow. This link below expires one hour from its sent date.
-            Please click the link to accept the invitation.' . $accept_link . '
+            Please click the link to accept the invitation. ' . $accept_link . '
             ';
 
             //be sure the /r/n (carriage return) characters are in DOUBLE QUOTES!

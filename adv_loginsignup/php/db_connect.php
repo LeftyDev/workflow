@@ -30,4 +30,4 @@ if (!$link) {
         . mysqli_connect_error());
 }
 
-?>
+//?>

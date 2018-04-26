@@ -321,6 +321,11 @@ html, body {
       height: 50px;
       background: #382b3e;
       border-radius: 50px; }
+    #top div .sign-out {
+      height: 30px;
+      margin-top: 10px; }
+    #top div .sign-out:hover {
+      cursor: pointer; }
 
 #bottom {
   bottom: 0;

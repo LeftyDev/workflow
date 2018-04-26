@@ -102,7 +102,7 @@ if (!(isset($_SESSION["user_id"])) OR $_SESSION["user_id"] == 0) {
         <span class="app-logo">Work<span class="app-logo-bold">flow</span></span>
         <div>
             <span class="header-username">Welcome, <?= $_SESSION['user_name'] ?>.</span>
-<!--            <div class="user-image"></div>-->
+            <img src="img/icons/signout.svg" class="sign-out" onclick="window.location.href = 'logout.php'">
         </div>
     </div>
     <div id="bottom"></div>
