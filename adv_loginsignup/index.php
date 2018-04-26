@@ -102,7 +102,10 @@ if (!(isset($_SESSION["user_id"])) OR $_SESSION["user_id"] == 0) {
                         if (data.status == "success") {
                             if (data.user_message != null) {
                                 $("#user_error_message").html(data.user_message);
-                                $("#user_error_message").css("display","block");
+                                $("#user_error_message").css({
+                                    "display": "block",
+                                    "color": "#42d446"
+                                });
                             }
                         } else {
                             if (data.email_error != null) {
@@ -127,7 +130,8 @@ if (!(isset($_SESSION["user_id"])) OR $_SESSION["user_id"] == 0) {
                 <span><span class="logo-1">Work</span><span class="logo-2">flow</span></span>
             </div>
             <div id="content-right">
-                <span><span class="header-1">You are successfully logged in, <?= $_SESSION['user_name'] . " (" . $_SESSION['user_email'] . ")" ?>.</span>
+                <span class="header-1">Entering Work<span class="header-2">flow</span>, <?= $_SESSION['user_name'] . " (" . $_SESSION['user_email'] . ")" ?>...</span>
+                <img src="https://www.coherent.com/images/site_images/COHR-preloader.gif" height="175px">
 
                 <div id="corner-message-right" onclick="window.location = 'logout.php'">
                     <span></span><span>Logout</span>
@@ -136,6 +140,12 @@ if (!(isset($_SESSION["user_id"])) OR $_SESSION["user_id"] == 0) {
 
         </div>
     </div>
+
+    <script type="text/javascript">
+        setTimeout(function() {
+            window.location.href = "application.php";
+        }, 5000);
+    </script>
 
     <?php
 }

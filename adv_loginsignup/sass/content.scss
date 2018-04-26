@@ -9,6 +9,7 @@ html, body {
   background-color: #21D4FD;
   background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #container {
@@ -98,7 +99,7 @@ html, body {
     font-weight: 800;
   }
 
-  form {
+  form, #password_form {
     margin-top: -19px;
     min-width: 100%;
     width: 100%;

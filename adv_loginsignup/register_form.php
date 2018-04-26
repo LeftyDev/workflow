@@ -59,9 +59,9 @@ if (!(isset($_SESSION["user_id"]))) {
                 <span><span class="logo-1">Work</span><span class="logo-2">flow</span></span>
             </div>
             <div id="content-right">
-                <span><span class="header-1">How did you get here, <?= $_SESSION['user_name'] ?>?.</span>
+                <span><span class="header-1">How did you get here, <?= $_SESSION['user_name'] ?>?</span>
 
-                <div id="corner-message" onclick="window.location = 'logout.php'">
+                <div id="corner-message-right" onclick="window.location = 'logout.php'">
                     <span>Made a mistake? </span><span>Logout now.</span>
                 </div>
             </div>
